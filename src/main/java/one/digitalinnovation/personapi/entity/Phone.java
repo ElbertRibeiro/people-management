@@ -6,6 +6,7 @@
 package one.digitalinnovation.personapi.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import one.digitalinnovation.personapi.enums.PhoneType;
 
 import lombok.AllArgsConstructor;
@@ -24,7 +25,7 @@ import javax.persistence.Id;
  *
  * @author elbertnilton
  */
-
+@Entity
 @Data
 @Builder
 @AllArgsConstructor
