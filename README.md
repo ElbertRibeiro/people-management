@@ -1,3 +1,5 @@
+para acessar banco de dados de questões http://localhost:8080/h2-console/
+
 # REST API example application
 
 This is a bare-bones example of a Sinatra application providing a REST
