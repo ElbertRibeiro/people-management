@@ -1,9 +1,10 @@
-package one.digitalinnovation.personapi.dto.request;
+package one.digitalinnovation.personapi.person;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import one.digitalinnovation.personapi.phone.PhoneDTO;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.Valid;

@@ -1,9 +1,10 @@
-package one.digitalinnovation.personapi.entity;
+package one.digitalinnovation.personapi.person;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import one.digitalinnovation.personapi.phone.Phone;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

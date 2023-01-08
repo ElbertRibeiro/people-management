@@ -1,8 +1,8 @@
 package one.digitalinnovation.personapi.utils;
 
-import one.digitalinnovation.personapi.dto.request.PhoneDTO;
-import one.digitalinnovation.personapi.entity.Phone;
-import one.digitalinnovation.personapi.enums.PhoneType;
+import one.digitalinnovation.personapi.phone.PhoneDTO;
+import one.digitalinnovation.personapi.phone.Phone;
+import one.digitalinnovation.personapi.phone.PhoneType;
 
 public class PhoneUtils {
 
