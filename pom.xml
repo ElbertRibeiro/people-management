@@ -39,10 +39,12 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<version>1.18.24</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
@@ -75,18 +77,6 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-							<version>$</version>
-							<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-							<dependency>
-								<groupId>org.projectlombok</groupId>
-								<artifactId>lombok</artifactId>
-								<version>1.18.24</version>
-								<scope>provided</scope>
-							</dependency>
-						</path>
 						<path>
 							<groupId>org.mapstruct</groupId>
 							<artifactId>mapstruct-processor</artifactId>
