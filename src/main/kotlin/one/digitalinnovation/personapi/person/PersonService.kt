@@ -3,17 +3,15 @@ package one.digitalinnovation.personapi.person
 import one.digitalinnovation.personapi.dto.MessageResponseDTO
 import one.digitalinnovation.personapi.exception.PersonNotFoundException
 import org.modelmapper.ModelMapper
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service
 class PersonService(val personRepository: PersonRepository) {
-    fun listAll(): List<Person> {
-        return personRepository.findAll()
-    }
-
-    @Throws(PersonNotFoundException::class)
-    fun findById(id: Long): PersonDTO {
-        return ModelMapper().map(verifyIfExists(id), PersonDTO::class.java)
+    fun listAll(id: Long?, pageable: Pageable): Page<Person> {
+        id ?.let { return personRepository.findAllById(id, pageable) }
+        return personRepository.findAll(pageable)
     }
 
     @Throws(PersonNotFoundException::class)
