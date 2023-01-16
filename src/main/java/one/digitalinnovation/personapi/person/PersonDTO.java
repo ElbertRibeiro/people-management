@@ -1,5 +1,6 @@
 package one.digitalinnovation.personapi.person;
 
+import io.swagger.annotations.ApiModelProperty;
 import one.digitalinnovation.personapi.phone.PhoneDTO;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -9,9 +10,10 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 public class PersonDTO {
-
+    @ApiModelProperty (notes = "Person ID", example = "1", required = true)
     private Long id;
 
+    @ApiModelProperty(notes = "Person name", example = "joao", required = true)
     @NotEmpty
     @Size(min = 2, max = 100)
     private String firstName;

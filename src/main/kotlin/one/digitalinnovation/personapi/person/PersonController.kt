@@ -1,5 +1,6 @@
 package one.digitalinnovation.personapi.person
 
+import io.swagger.v3.oas.annotations.Operation
 import one.digitalinnovation.personapi.dto.MessageResponseDTO
 import one.digitalinnovation.personapi.exception.PersonNotFoundException
 import org.springframework.http.HttpStatus
@@ -11,6 +12,7 @@ import javax.validation.Valid
 @RequestMapping("/api/v2/people")
 class PersonController(val personService: PersonService, val personServiceKt: PersonServiceKt) {
 
+    @Operation(summary = "Endpoint to list for persons", description = "Returns 200 if sucessful")
     @GetMapping
     fun listAll(): ResponseEntity<List<Person>> {
         return ResponseEntity.ok(personServiceKt.listAll())
