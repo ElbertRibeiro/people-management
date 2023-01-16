@@ -27,7 +27,7 @@ class PersonController(val personService: PersonService, val personServiceKt: Pe
     @ResponseStatus(HttpStatus.OK)
     @Throws(PersonNotFoundException::class)
     fun findById(@PathVariable id: Long): PersonDTO {
-        return personService.findById(id)
+        return personServiceKt.findById(id)
     }
 
     @PutMapping("/{id}")
@@ -41,6 +41,6 @@ class PersonController(val personService: PersonService, val personServiceKt: Pe
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @Throws(PersonNotFoundException::class)
     fun deleteById(@PathVariable id: Long) {
-        personService.delete(id)
+        personServiceKt.delete(id)
     }
 }
