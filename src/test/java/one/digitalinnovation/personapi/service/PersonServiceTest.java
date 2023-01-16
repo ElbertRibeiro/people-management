@@ -38,9 +38,8 @@ class PersonServiceTest {
     }
 
     private MessageResponseDTO createExpectedMessageResponse(Long id) {
-        return MessageResponseDTO
-                .builder()
-                .message("Created person with ID " + id)
-                .build();
+        MessageResponseDTO messageResponseDTO = new MessageResponseDTO();
+        messageResponseDTO.setMessage("Created person with ID " + id);
+        return messageResponseDTO;
     }
 }

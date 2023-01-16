@@ -11,17 +11,15 @@ public class PhoneUtils {
     private static final long PHONE_ID = 1L;
 
     public static PhoneDTO createFakeDTO() {
-        return PhoneDTO.builder()
-                .number(PHONE_NUMBER)
-                .type(PHONE_TYPE)
-                .build();
+        PhoneDTO phoneDTO = new PhoneDTO(PHONE_TYPE, PHONE_NUMBER);
+        return phoneDTO;
     }
 
     public static Phone createFakeEntity() {
-        return Phone.builder()
-                .id(PHONE_ID)
-                .number(PHONE_NUMBER)
-                .type(PHONE_TYPE)
-                .build();
+        Phone phone = new Phone();
+        phone.setId(PHONE_ID);
+        phone.setType(PHONE_TYPE);
+        phone.setNumber(PHONE_NUMBER);
+        return phone;
     }
 }
