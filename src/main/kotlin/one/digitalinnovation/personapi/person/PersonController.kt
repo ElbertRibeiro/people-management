@@ -10,12 +10,12 @@ import javax.validation.Valid
 
 @RestController
 @RequestMapping("/api/v2/people")
-class PersonController(val personService: PersonService, val personServiceKt: PersonServiceKt) {
+class PersonController(val personService: PersonService) {
 
     @Operation(summary = "Endpoint to list for persons", description = "Returns 200 if sucessful")
     @GetMapping
     fun listAll(): ResponseEntity<List<Person>> {
-        return ResponseEntity.ok(personServiceKt.listAll())
+        return ResponseEntity.ok(personService.listAll())
     }
 
     @PostMapping
@@ -27,7 +27,7 @@ class PersonController(val personService: PersonService, val personServiceKt: Pe
     @ResponseStatus(HttpStatus.OK)
     @Throws(PersonNotFoundException::class)
     fun findById(@PathVariable id: Long): PersonDTO {
-        return personServiceKt.findById(id)
+        return personService.findById(id)
     }
 
     @PutMapping("/{id}")
@@ -41,6 +41,6 @@ class PersonController(val personService: PersonService, val personServiceKt: Pe
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @Throws(PersonNotFoundException::class)
     fun deleteById(@PathVariable id: Long) {
-        personServiceKt.delete(id)
+        personService.delete(id)
     }
 }
