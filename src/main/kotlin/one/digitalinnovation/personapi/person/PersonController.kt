@@ -3,17 +3,17 @@ package one.digitalinnovation.personapi.person
 import one.digitalinnovation.personapi.dto.MessageResponseDTO
 import one.digitalinnovation.personapi.exception.PersonNotFoundException
 import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
 @RestController
 @RequestMapping("/api/v2/people")
-class PersonController(val personService: PersonService) {
+class PersonController(val personService: PersonService, val personServiceKt: PersonServiceKt) {
 
     @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    fun listAll(): List<PersonDTO> {
-        return personService.listAll()
+    fun listAll(): ResponseEntity<List<Person>> {
+        return ResponseEntity.ok(personServiceKt.listAll())
     }
 
     @PostMapping

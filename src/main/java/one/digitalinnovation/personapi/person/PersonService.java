@@ -5,10 +5,6 @@ import one.digitalinnovation.personapi.exception.PersonNotFoundException;
 import org.springframework.stereotype.Service;
 import org.modelmapper.ModelMapper;
 
-
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Service
 public class PersonService {
 
@@ -21,13 +17,6 @@ public class PersonService {
     public MessageResponseDTO createPerson(PersonDTO personDTO) {
         Person personToSave = new ModelMapper().map(personDTO, Person.class);
         return createMessageResponse(personRepository.save(personToSave).getId(), "Created person with ID ");
-    }
-
-    public List<PersonDTO> listAll() {
-        List<Person> allPeople = personRepository.findAll();
-        return allPeople.stream()
-                .map(entity -> new ModelMapper().map(entity, PersonDTO.class))
-                .collect(Collectors.toList());
     }
 
     public PersonDTO findById(Long id) throws PersonNotFoundException {
