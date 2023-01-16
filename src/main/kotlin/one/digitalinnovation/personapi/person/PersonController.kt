@@ -17,9 +17,8 @@ class PersonController(val personService: PersonService, val personServiceKt: Pe
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    fun createPerson(@RequestBody personDTO: @Valid PersonDTO): MessageResponseDTO {
-        return personService.createPerson(personDTO)
+    fun createPerson(@RequestBody personDTO: @Valid PersonDTO): ResponseEntity<MessageResponseDTO> {
+        return ResponseEntity.status(HttpStatus.CREATED).body(personService.createPerson(personDTO))
     }
 
     @GetMapping("/{id}")
