@@ -30,8 +30,8 @@ class PersonService(val personRepository: PersonRepository) {
     @Throws(PersonNotFoundException::class)
     fun updateById(id: Long, personDTO: PersonDTO): MessageResponseDTO {
         verifyIfExists(id)
-        val updatedPerson = personRepository.save(ModelMapper().map(personDTO, Person::class.java))
-        return createMessageResponse(updatedPerson.id, "Updated person with ID ")
+        return createMessageResponse(personRepository.save(ModelMapper().map(personDTO, Person::class.java))
+            .id, "Updated person with ID ")
     }
 
     private fun createMessageResponse(id: Long, message: String): MessageResponseDTO {
