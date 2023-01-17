@@ -1,7 +1,7 @@
 package com.elbertribeiro.peopleapi.person
 
-import io.swagger.annotations.ApiModelProperty
 import com.elbertribeiro.peopleapi.phone.PhoneDTO
+import io.swagger.annotations.ApiModelProperty
 import org.hibernate.validator.constraints.br.CPF
 import javax.validation.Valid
 import javax.validation.constraints.NotEmpty

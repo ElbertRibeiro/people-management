@@ -1,8 +1,8 @@
 package com.elbertribeiro.peopleapi.person
 
-import io.swagger.v3.oas.annotations.Operation
 import com.elbertribeiro.peopleapi.dto.MessageResponseDTO
 import com.elbertribeiro.peopleapi.exception.PersonNotFoundException
+import io.swagger.v3.oas.annotations.Operation
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
