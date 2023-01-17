@@ -1,4 +1,4 @@
-package one.digitalinnovation.personapi.phone
+package com.elbertribeiro.peopleapi.phone
 
 import javax.persistence.*
 

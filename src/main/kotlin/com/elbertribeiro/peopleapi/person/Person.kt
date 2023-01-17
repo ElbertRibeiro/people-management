@@ -1,6 +1,6 @@
-package one.digitalinnovation.personapi.person
+package com.elbertribeiro.peopleapi.person
 
-import one.digitalinnovation.personapi.phone.Phone
+import com.elbertribeiro.peopleapi.phone.Phone
 import java.time.LocalDate
 import javax.persistence.*
 

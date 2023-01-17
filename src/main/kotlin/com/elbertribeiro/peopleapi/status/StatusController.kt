@@ -1,4 +1,4 @@
-package one.digitalinnovation.personapi.status
+package com.elbertribeiro.peopleapi.status
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

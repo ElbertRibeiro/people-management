@@ -1,4 +1,4 @@
-package one.digitalinnovation.personapi
+package com.elbertribeiro.peopleapi
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

@@ -1,4 +1,4 @@
-package one.digitalinnovation.personapi.dto
+package com.elbertribeiro.peopleapi.dto
 
 class MessageResponseDTOBuilder {
     fun createMessageResponseDTO(): MessageResponseDTO {

@@ -1,7 +1,7 @@
-package one.digitalinnovation.personapi.person
+package com.elbertribeiro.peopleapi.person
 
-import one.digitalinnovation.personapi.dto.MessageResponseDTO
-import one.digitalinnovation.personapi.exception.PersonNotFoundException
+import com.elbertribeiro.peopleapi.dto.MessageResponseDTO
+import com.elbertribeiro.peopleapi.exception.PersonNotFoundException
 import org.modelmapper.ModelMapper
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

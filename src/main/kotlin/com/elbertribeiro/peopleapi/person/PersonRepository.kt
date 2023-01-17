@@ -1,4 +1,4 @@
-package one.digitalinnovation.personapi.person
+package com.elbertribeiro.peopleapi.person
 
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
