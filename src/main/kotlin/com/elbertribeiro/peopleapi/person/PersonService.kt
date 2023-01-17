@@ -1,6 +1,6 @@
 package com.elbertribeiro.peopleapi.person
 
-import com.elbertribeiro.peopleapi.dto.MessageResponseDTO
+import com.elbertribeiro.peopleapi.message.MessageResponseDTO
 import com.elbertribeiro.peopleapi.exception.PersonNotFoundException
 import org.modelmapper.ModelMapper
 import org.springframework.data.domain.Page

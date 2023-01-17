@@ -1,6 +1,6 @@
 package com.elbertribeiro.peopleapi.person
 
-import com.elbertribeiro.peopleapi.dto.MessageResponseDTO
+import com.elbertribeiro.peopleapi.message.MessageResponseDTO
 import com.elbertribeiro.peopleapi.exception.PersonNotFoundException
 import io.swagger.v3.oas.annotations.Operation
 import org.springframework.data.domain.Page
@@ -26,10 +26,9 @@ class PersonController(val personService: PersonService) {
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
     @Throws(PersonNotFoundException::class)
-    fun updateById(@PathVariable id: Long, @RequestBody personDTO: @Valid PersonDTO): MessageResponseDTO {
-        return personService.updateById(id, personDTO)
+    fun updateById(@PathVariable id: Long, @RequestBody personDTO: @Valid PersonDTO): ResponseEntity<MessageResponseDTO> {
+        return ResponseEntity.ok(personService.updateById(id, personDTO))
     }
 
     @DeleteMapping("/{id}")

@@ -1,4 +1,4 @@
-package com.elbertribeiro.peopleapi.dto
+package com.elbertribeiro.peopleapi.message
 
 class MessageResponseDTO {
     var message: String? = null
