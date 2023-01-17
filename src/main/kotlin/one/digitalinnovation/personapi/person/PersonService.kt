@@ -40,6 +40,10 @@ class PersonService(val personRepository: PersonRepository) {
 
     @Throws(PersonNotFoundException::class)
     fun verifyIfExists(id: Long): Person? {
-        return personRepository.findById(id).orElseThrow { PersonNotFoundException(id) }
+        return personRepository.findById(id).orElseThrow {
+            PersonNotFoundException(
+                id
+            )
+        }
     }
 }
