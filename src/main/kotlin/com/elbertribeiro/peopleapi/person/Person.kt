@@ -22,22 +22,4 @@ class Person {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE])
     var phones: List<Phone>? = null
-
-    constructor(
-        id: Long,
-        firstName: String?,
-        lastName: String?,
-        cpf: String?,
-        birthDate: LocalDate?,
-        phones: List<Phone>?
-    ) {
-        this.id = id
-        this.firstName = firstName
-        this.lastName = lastName
-        this.cpf = cpf
-        this.birthDate = birthDate
-        this.phones = phones
-    }
-
-    constructor()
 }
