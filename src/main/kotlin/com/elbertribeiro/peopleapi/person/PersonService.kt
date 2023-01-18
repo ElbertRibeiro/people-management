@@ -9,9 +9,13 @@ import org.springframework.stereotype.Service
 
 @Service
 class PersonService(val personRepository: PersonRepository) {
-    fun listAll(id: Long?, pageable: Pageable): Page<Person> {
+    fun listAllWithPageable(id: Long?, pageable: Pageable): Page<Person> {
         id ?.let { return personRepository.findAllById(id, pageable) }
         return personRepository.findAll(pageable)
+    }
+
+    fun listAll(): List<Person> {
+        return personRepository.findAll()
     }
 
     @Throws(PersonNotFoundException::class)

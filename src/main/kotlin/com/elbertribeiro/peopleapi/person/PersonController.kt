@@ -14,10 +14,15 @@ import javax.validation.Valid
 @RequestMapping("/api/v2/people")
 class PersonController(val personService: PersonService) {
 
-    @Operation(summary = "Endpoint to list for persons", description = "Returns 200 if sucessful")
+    @Operation(summary = "Endpoint to list for persons with Pageable", description = "Returns 200 if sucessful")
     @GetMapping
-    fun listAll(@RequestParam(required = false) idPerson: Long?, pageable: Pageable): ResponseEntity<Page<Person>> {
-        return ResponseEntity.ok(personService.listAll(idPerson, pageable))
+    fun listAllWithPageable(@RequestParam(required = false) idPerson: Long?,@RequestParam(required = false) pageable: Pageable): ResponseEntity<Page<Person>> {
+        return ResponseEntity.ok(personService.listAllWithPageable(idPerson, pageable))
+    }
+    @Operation(summary = "Endpoint to list", description = "Returns 200 if sucessful")
+    @GetMapping("/list")
+    fun listAll(): ResponseEntity<List<Person>> {
+        return ResponseEntity.ok(personService.listAll())
     }
 
     @PostMapping
